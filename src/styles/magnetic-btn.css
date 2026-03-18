@@ -1,0 +1,117 @@
+/* ============================================================
+   PREMIUM BUTTON
+   ============================================================ */
+
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: none;
+  overflow: hidden;
+  border-radius: 40px; /* Pill shape for premium feel */
+  transition: color 0.5s var(--ease-expo), border-color 0.5s var(--ease-expo);
+  white-space: nowrap;
+}
+
+/* Background fill layer */
+.btn-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: var(--accent);
+  transform: translateY(100%);
+  transition: transform 0.6s var(--ease-expo);
+  z-index: 0;
+}
+
+.magnetic-btn:hover .btn-fill {
+  transform: translateY(0);
+}
+
+/* Text Container for Roll Effect */
+.btn-text-wrapper {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  height: 14px;
+  overflow: hidden;
+}
+
+.btn-text, .btn-text-hover {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  line-height: 14px;
+  transition: transform 0.6s var(--ease-expo);
+}
+
+.btn-text-hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: var(--white);
+}
+
+.magnetic-btn:hover .btn-text {
+  transform: translateY(-100%);
+}
+
+.magnetic-btn:hover .btn-text-hover {
+  transform: translateY(-100%);
+}
+
+.btn-arrow {
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.6s var(--ease-expo);
+}
+
+.magnetic-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+/* Variants */
+.magnetic-btn--light {
+  border: 1px solid rgba(250, 250, 248, 0.5);
+  color: var(--white);
+}
+
+.magnetic-btn--light:hover {
+  border-color: var(--accent);
+}
+
+.magnetic-btn--dark {
+  border: 1px solid rgba(28, 27, 26, 0.35);
+  color: var(--fg);
+}
+
+.magnetic-btn--dark:hover {
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.magnetic-btn--accent {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--white);
+}
+
+.magnetic-btn--accent .btn-fill {
+  background: var(--fg);
+}
+
+.magnetic-btn--accent:hover {
+  border-color: var(--fg);
+}

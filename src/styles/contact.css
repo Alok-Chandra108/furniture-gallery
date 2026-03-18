@@ -1,0 +1,123 @@
+/* ============================================================
+   CONTACT / FOOTER SECTION
+   ============================================================ */
+
+.contact {
+  background: var(--fg);
+  color: var(--white);
+  padding: clamp(80px, 12vw, 160px) clamp(20px, 5vw, 80px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  padding-bottom: clamp(60px, 8vw, 100px);
+  border-bottom: 1px solid rgba(250, 250, 248, 0.08);
+}
+
+.contact__heading {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 110px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.contact__heading em {
+  font-style: italic;
+  color: rgba(250, 250, 248, 0.35);
+}
+
+.contact__sub {
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.75;
+  color: rgba(250, 250, 248, 0.4);
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+
+/* Info column */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.contact__info-group {}
+.contact__info-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.3);
+  margin-bottom: 8px;
+}
+
+.contact__info-value {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 300;
+  color: rgba(250, 250, 248, 0.8);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.contact__info-value a:hover {
+  color: var(--accent-2);
+}
+
+/* Footer bar */
+.contact__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact__copyright {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(250, 250, 248, 0.2);
+}
+
+.contact__footer-nav {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.contact__footer-nav a {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.25);
+  transition: color 0.3s;
+}
+
+.contact__footer-nav a:hover { color: rgba(250, 250, 248, 0.6); }
+
+/* Decorative large text */
+.contact__watermark {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: rgba(250, 250, 248, 0.03);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contact__top { grid-template-columns: 1fr; }
+  .contact__watermark { font-size: 22vw; }
+}

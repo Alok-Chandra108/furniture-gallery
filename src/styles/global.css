@@ -1,0 +1,117 @@
+/* ============================================================
+   GLOBAL CSS — Harold Ashworth Furniture Portfolio
+   ============================================================ */
+
+/* --- Google Fonts & Variables ----------------------------- */
+:root {
+  --bg:          #EFECE6;
+  --bg-dark:     #E8E4DC;
+  --fg:          #1C1B1A;
+  --fg-muted:    #5A5751;
+  --accent:      #8B5A2B;
+  --accent-2:    #A66E4E;
+  --white:       #FAFAF8;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', Arial, sans-serif;
+
+  --ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-power4: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --nav-h: 72px;
+}
+
+/* --- Reset ------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none; /* hidden — custom cursor takes over */
+}
+
+/* Restore cursor on touch */
+@media (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: none;
+  font-family: var(--font-body);
+}
+
+/* --- Scrollbar -------------------------------------------- */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* --- Typography Utilities --------------------------------- */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.body-text {
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--fg-muted);
+}
+
+/* --- Split text overflow mask ----------------------------- */
+.line-mask {
+  overflow: hidden;
+  display: block;
+}
+
+/* --- Section spacing -------------------------------------- */
+section {
+  position: relative;
+}
+
+/* --- Accent line ------------------------------------------ */
+.accent-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 24px;
+}

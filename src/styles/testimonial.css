@@ -1,0 +1,62 @@
+/* ============================================================
+   TESTIMONIAL / EDITORIAL QUOTE
+   ============================================================ */
+
+.testimonial {
+  padding: clamp(80px, 12vw, 160px) clamp(20px, 8vw, 140px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(200px, 20vw, 280px);
+  color: rgba(139, 90, 43, 0.07);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonial__quote {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 58px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--fg);
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.testimonial__attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.testimonial__attribution-line {
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto 12px;
+}
+
+.testimonial__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--fg);
+}
+
+.testimonial__title {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}

@@ -1,0 +1,157 @@
+/* ============================================================
+   PROCESS — Horizontal Scroll Section
+   ============================================================ */
+
+.process {
+  position: relative;
+  background: var(--fg);
+  overflow: hidden;
+  height: 100vh; /* Force exactly viewport height when pinned */
+  display: flex;
+  flex-direction: column;
+}
+
+.process__header {
+  flex-shrink: 0;
+  padding: 8vh clamp(20px, 5vw, 80px) 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.process__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.process__eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: var(--accent-2);
+}
+
+.process__eyebrow-text {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.4);
+}
+
+.process__heading {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 70px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  color: var(--white);
+}
+
+.process__note {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.25);
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+/* Horizontal track */
+.process__track-wrap {
+  flex: 1;
+  display: flex;
+  align-items: stretch; /* Change from center to stretch the card to full height available */
+  overflow: hidden;
+  padding-bottom: 4vh;
+}
+
+.process__track {
+  display: flex;
+  gap: 0;
+}
+
+.process__card {
+  flex: 0 0 clamp(320px, 36vw, 480px); /* Increased from 300px/420px */
+  padding: 0 clamp(28px, 3vw, 48px);
+  border-right: 1px solid rgba(250, 250, 248, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.process__card:first-child { padding-left: clamp(20px, 5vw, 80px); }
+.process__card:last-child {
+  border-right: none;
+  padding-right: clamp(20px, 5vw, 80px);
+}
+
+.process__card-number {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(250, 250, 248, 0.08);
+  margin-bottom: 8px;
+  letter-spacing: -0.04em;
+}
+
+.process__card-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.process__card-body {
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(250, 250, 248, 0.5);
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+
+.process__card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-top: auto; /* Pushes image to bottom if there's flexible space */
+}
+
+.process__card-image::before {
+  content: '';
+  display: block;
+  padding-top: 85%; /* Make images significantly taller */
+}
+
+.process__card-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .process {
+    height: auto;
+  }
+  .process__track-wrap {
+    padding-bottom: 0;
+    align-items: stretch;
+  }
+  .process__track {
+    flex-direction: column;
+    width: 100%;
+  }
+  .process__card {
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(250, 250, 248, 0.08);
+    padding: 60px clamp(20px, 5vw, 80px);
+  }
+}
