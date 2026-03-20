@@ -67,7 +67,6 @@
   gap: clamp(20px, 2.5vw, 36px);
 }
 
-.collection__piece {}
 
 .collection__piece-img {
   position: relative;
